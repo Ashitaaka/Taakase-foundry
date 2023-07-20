@@ -1,0 +1,31 @@
+.login_container .login,
+.login_container .logout,
+.login_container .add_font_button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .5em;
+    cursor: pointer;
+}
+
+.login_container .logged_in_nav{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.add_font_button{
+    background-color: var(--bg-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: .5em 1.5em;
+    border-radius: 1.5em;
+}
+
+.add_font_button:hover{
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--bg-color);
+    padding: .5em 1.5em;
+    border-radius: 1.5em;
+}

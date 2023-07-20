@@ -1,0 +1,86 @@
+.font_details_page{
+    padding: 2em;
+}
+
+.font_details_page .back_home_button{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: 1em;
+}
+
+.font_details_page .back_home_button:hover{
+   text-decoration: underline;
+}
+
+.setters{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2em 0;
+    gap: 1em;
+}
+
+.setters label{
+    margin-right: .5em;
+}
+
+.setters input[type="range"]{
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+
+.setters input[type="range"]:focus{
+    outline: none;
+}
+
+/* Custom Tracks for Chrome, Safari, Opera, and Edge Chromium */
+.setters input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--primary-color);
+    height: 0.1rem;
+}
+  
+/* Custom Tracks for  Firefox */
+.setters input[type="range"]::-moz-range-track {
+    background: var(--primary-color);
+    height: 0.1rem;
+}
+
+/* Custom Thumb for Chrome, Safari, Opera, and Edge Chromium */
+.setters input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -7.2px; /* Centers thumb on the track */
+    border: .1rem solid var(--primary-color);
+    background-color: var(--bg-color);
+    height: 1rem;
+    width: 1rem;  
+    border-radius: 50%;  
+    
+}
+
+/* Custom Thumb for  Firefox */
+.setters input[type="range"]::-moz-range-thumb{
+    border: .1rem solid var(--primary-color);
+    background-color: var(--bg-color);
+    height: 1rem;
+    width: 1rem;  
+    border-radius: 50%; 
+}
+
+.font_details_page textarea{
+    display: block;
+    width: 100%;
+    max-height: 60vh;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+    resize: none;
+}
+
+.font_details_page textarea:hover{
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}

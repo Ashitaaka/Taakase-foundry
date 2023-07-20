@@ -25,8 +25,8 @@ class BaseModel {
 
     //Auto generates the SQL request
     const sql1 = `INSERT INTO ${this.table}`;
-    const sql2 = "";
-    const sql3 = "";
+    let sql2 = "";
+    let sql3 = "";
 
     bodyKeys.forEach((key) => {
       sql2 += `${key},`;
@@ -39,7 +39,7 @@ class BaseModel {
     sql2 = removeLastChar(sql2);
     sql3 = removeLastChar(sql3);
 
-    return this.db.query(`${sql1} ${sql2} VALUES (${sql3})`, bodyValues);
+    return this.db.query(`${sql1} (${sql2}) VALUES (${sql3})`, bodyValues);
   };
 
   /** TO UPDATE */

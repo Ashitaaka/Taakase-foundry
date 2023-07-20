@@ -1,0 +1,46 @@
+.font_card{
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 1.5em;
+}
+
+.font_card:hover{
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.font_title{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.font_title_arrow{
+    position: relative;
+    top: -50px;
+    color: var(--bg-color);
+    transition: all .4s ease-out;
+    opacity: 0;
+}
+
+.font_card:hover .font_title_arrow{
+    top: 0;
+    opacity: 1;
+}
+
+.font_card h3{
+    font-size: 50px;
+    line-height: 1.5em;
+}
+
+.font_card:hover h3{
+    color: var(--bg-color);
+}

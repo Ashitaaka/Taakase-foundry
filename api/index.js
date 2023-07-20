@@ -7,6 +7,8 @@ const { userRouter, fontRouter, categoryRouter } = require("./src/routes");
 const app = express();
 const port = process.env.APP_PORT ?? 5002; //defining the backend port
 
+app.use(express.json());//treat body requests in JSON
+
 const APIRouter = Router(); // Creates a new instance of Express Router
 app.use("/api", APIRouter); //Every requests coming on '/api' are redirected to APIRouter
 
