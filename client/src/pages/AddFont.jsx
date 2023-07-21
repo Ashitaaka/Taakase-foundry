@@ -62,7 +62,8 @@ const AddFont = () => {
 
     postNewFont(formWithFile)
       .then((res) => {
-        console.log("datas correctly uploaded", res)
+        console.log("datas correctly uploaded", res);
+        window.location.reload();
       })
       .catch((error) => {
         console.error(error);
