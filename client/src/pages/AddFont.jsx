@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 //import components
 import { CgClose } from "react-icons/cg";
 import { getAllCategories } from "../utils/httpServices";
-import { postNewFont } from "../utils/httpServices"
+import { postNewFont } from "../utils/httpServices";
 
 //import CSS
 import "./AddFont.css";
+import ValidationModal from "../components/validation modal/ValidationModal";
 
 const AddFont = () => {
   const [categories, setCategories] = useState([]);
@@ -19,6 +20,7 @@ const AddFont = () => {
     categories_id: "",
     studio: "",
   });
+  const [showModal, setShowModal] = useState(false);
 
   //getting all existing font categories
   useEffect(() => {
@@ -43,42 +45,51 @@ const AddFont = () => {
     });
   };
 
-  //when choosing a file
+  //When choosing a file
   const handleFileChange = (e) => {
     if (!e.target.files[0]) return;
     setFile(e.target.files[0]);
   };
 
+  //Sending post to create new font
   const sendingForm = (e) => {
     e.preventDefault();
 
     const formWithFile = new FormData();
 
-    formWithFile.append('file', file);
-    formWithFile.append('name', form.name);
-    formWithFile.append('type', form.type);
-    formWithFile.append('categories_id', form.categories_id);
-    formWithFile.append('studio', form.studio);
+    formWithFile.append("file", file);
+    formWithFile.append("name", form.name);
+    formWithFile.append("type", form.type);
+    formWithFile.append("categories_id", form.categories_id);
+    formWithFile.append("studio", form.studio);
 
     postNewFont(formWithFile)
       .then((res) => {
         console.log("datas correctly uploaded", res);
-        window.location.reload();
+
+        //Showing validation modal
+        setShowModal(true);
+
+        //Hidding validation modal
+        const timer = setTimeout(() => {
+          setShowModal(false);
+          window.location.reload();
+        }, 2000);
+
       })
       .catch((error) => {
         console.error(error);
         setErrors(error);
       });
-
   };
-
-  console.log(form, file);
 
   return (
     <div className="add_font_page">
       <Link to={"/"}>
         <CgClose size={30} className="closing_cross" />
       </Link>
+
+      <ValidationModal showModal={showModal} />
 
       <div className="add_font_page_content">
         <div className="title">

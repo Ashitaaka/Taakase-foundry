@@ -17,7 +17,7 @@ const FontCard = ({id, name, type, url, studio}) => {
           <HiArrowDown size={25} className='font_title_arrow'/>
           <h3 style={{fontFamily: `${name}`}}>{name}</h3>
       </Link>
-          <p>By {studio}</p>
+          <p>By {studio ? studio : "unknown"}</p>
     </div>
   )
 }
