@@ -2,3 +2,4 @@ node_modules/
 .env
 sources/
 database/
+node_modules
