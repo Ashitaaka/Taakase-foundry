@@ -1,0 +1,7 @@
+.validation_modal{
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    width: 15em;
+    height: 5em;
+}
