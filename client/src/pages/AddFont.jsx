@@ -73,14 +73,14 @@ const AddFont = () => {
         //Hidding validation modal
         const timer = setTimeout(() => {
           setShowModal(false);
-        }, 4000);
+          window.location.reload();
+        }, 2000);
+
       })
       .catch((error) => {
         console.error(error);
         setErrors(error);
       });
-
-    window.location.reload();
   };
 
   return (
