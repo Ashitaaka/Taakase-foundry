@@ -78,7 +78,7 @@ export const postUserLogin = (form) => {
 //POST New font
 export const postNewFont = (formWithFile) => {
   return axios
-    .post("fonts", formWithFile)
+    .post("fonts/newfont", formWithFile)
     .then((res) => {
       return res.data;
     })

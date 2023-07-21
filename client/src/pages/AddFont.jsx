@@ -112,12 +112,12 @@ const AddFont = () => {
             />
           </div>
           <div className="type_field">
-            <label htmlFor="type">Nom de la fonderie</label>
+            <label htmlFor="type">Type de fichier</label>
             <input
               type="text"
               name="type"
               id="type"
-              placeholder="Exemple de type: 'Opentype'"
+              placeholder="Exemple de type: 'opentype'"
               required
               onChange={handleInputChange}
             />
@@ -128,6 +128,7 @@ const AddFont = () => {
               name="categories_id"
               id="categories_id"
               defaultValue=""
+              required
               onChange={handleInputChange}
             >
               <option value="" hidden disabled>
